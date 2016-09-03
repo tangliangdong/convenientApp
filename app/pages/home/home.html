@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar class="nav-bar" headerbackground>
+    <button menuToggle>
+      <img src="img/menuImg.png" alt="">
+    </button>
+    <ion-buttons end class="header-btn">
+      <button royal>
+        登录
+      </button>
+      <span class="sqlit">/</span>
+      <button>
+       注册
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar (input)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-slides #mySlider (ionDidChange)="onSlideChanged()" class="home-slides" [options]="mySlideOptions">
+    <ion-slide>
+      <img src="img/slide2.jpg" alt="" />
+    </ion-slide>
+
+    <ion-slide>
+      <img src="img/slide3.jpg" alt="" />
+    </ion-slide>
+
+    <ion-slide>
+      <img src="img/slide4.jpg" alt="" />
+    </ion-slide>
+  </ion-slides>
+
+  <button block class="leave-with">
+    <img src="img/jicun.jpg" alt="" >
+    <div class="luggage">
+      <h2>行李寄存</h2>
+      <p>Luggage Deposit</p>
+    </div>
+  </button>
+  <button class="transport">
+    <img src="img/yunsong.jpg" alt="">
+    <div class="luggage">
+      <h2>行李运送</h2>
+      <p>Luggage Transport</p>
+    </div>
+
+  </button>
+
+  <ion-buttons end class="addbtn">
+    <button clear large headerbackground class="addthree" id="addthree" (click)="openThree()">
+      <ion-icon name="md-add-circle" ></ion-icon>
+    </button>
+  </ion-buttons>
+
+  <ion-buttons end class="threebtnteam" id="threebtnteam">
+    <button headerbackground id="firstbtn">
+      <ion-icon name="ios-text" isActive="false"></ion-icon>
+    </button>
+    <button headerbackground id="secondbtn">
+      <ion-icon name="logo-whatsapp" isActive="false"></ion-icon>
+    </button>
+     <button  headerbackground id="thirdbtn" >
+      <ion-icon name="ios-pin" ></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-content>

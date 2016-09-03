@@ -1,0 +1,23 @@
+.sidemenu-content{
+  background:url('../../img/sidemenu-background.png') no-repeat;
+  background-size: cover;
+}
+.sidemenu-content scroll-content {
+    background-color: transparent;
+}
+
+
+.app-list{
+  margin-left: 4%;
+}
+.app-list button{
+  width: 60%;
+
+}
+
+.app-list img{
+  max-width: 60%;
+  max-height: 60%;
+  border-radius: 60%;
+  margin-bottom: 10%;
+}
