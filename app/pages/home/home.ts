@@ -1,5 +1,7 @@
 import {Component,ViewChild} from '@angular/core';
-import {NavController,Slides,Platform } from 'ionic-angular';
+import {NavController,Slides,Platform,ModalController} from 'ionic-angular';
+
+import {LoginPage} from '../login/login';
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
@@ -12,9 +14,14 @@ export class HomePage {
   public firstbtn : any;
   public secondbtn : any;
   public thirdbtn : any;
+  public user = {
+    phoneNumber : '登录/',
+    register: '注册'
+  };
 
   constructor(private navCtrl: NavController,
-              platform: Platform) {
+              platform: Platform,
+              public modalCtrl: ModalController) {
     platform.ready().then((readySource) => {
       // Platform now ready, execute any required native code
       //this.slider.slideNext(300);
@@ -25,9 +32,10 @@ export class HomePage {
       this.firstbtn = document.getElementById('firstbtn');
       this.secondbtn = document.getElementById('secondbtn');
       this.thirdbtn = document.getElementById('thirdbtn');
-
-
-
+      if(localStorage.getItem('phoneNumber')!=null){
+        this.user.phoneNumber = localStorage.getItem('phoneNumber');
+        this.user.register = '';
+      }
     });
   }
   mySlideOptions = {
@@ -65,7 +73,14 @@ export class HomePage {
       this.secondbtn.setAttribute('class','nosecondbtn');
       this.thirdbtn.setAttribute('class','nothirdbtn');
     }
-
-
+  }
+  login(){
+    let loginModal = this.modalCtrl.create(LoginPage);
+    loginModal.onDidDismiss(data => {
+      console.log(data);
+      this.user.phoneNumber = data.phoneNumber;
+      this.user.register = '';
+    });
+    loginModal.present();
   }
 }

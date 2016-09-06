@@ -3,13 +3,13 @@
     <button menuToggle>
       <img src="img/menuImg.png" alt="">
     </button>
+
     <ion-buttons end class="header-btn">
-      <button royal>
-        登录
+      <button royal (click)="login()" >
+        {{user.phoneNumber}}
       </button>
-      <span class="sqlit">/</span>
       <button>
-       注册
+        {{user.register}}
       </button>
     </ion-buttons>
 
