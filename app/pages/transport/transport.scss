@@ -1,0 +1,31 @@
+.transport-header{
+  margin-top: 16px;
+}
+.transport-header .toolbar{
+  height: 3rem;
+}
+.transport-content{
+  background: #eee;
+}
+.transport-content .item{
+  border-radius: 5px;
+}
+.transport-content .item .item-inner{
+  border: none;
+}
+.transport-content .first-item{
+  margin-top: 40px;
+}
+.transport-content .first-item input{
+  border-radius: 5px;
+  width: 50%;
+}
+.transport-content .forth-item input,
+.transport-content .firth-item input{
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1.8rem;
+}
+.transport-content .item{
+  margin-bottom: 1.6rem;
+}

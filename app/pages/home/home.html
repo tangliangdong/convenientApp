@@ -5,7 +5,7 @@
     </button>
 
     <ion-buttons end class="header-btn">
-      <button royal (click)="login()" >
+      <button royal (click)="login()">
         {{user.phoneNumber}}
       </button>
       <button>
@@ -34,20 +34,19 @@
     </ion-slide>
   </ion-slides>
 
-  <button block class="leave-with">
-    <img src="img/jicun.jpg" alt="" >
+  <button block class="leave-with" (click)="check(1)" >
+    <img src="img/jicun.jpg" alt="">
     <div class="luggage">
       <h2>行李寄存</h2>
       <p>Luggage Deposit</p>
     </div>
   </button>
-  <button class="transport">
+  <button class="transport" (click)="check(2)">
     <img src="img/yunsong.jpg" alt="">
     <div class="luggage">
       <h2>行李运送</h2>
       <p>Luggage Transport</p>
     </div>
-
   </button>
 
   <ion-buttons end class="addbtn">
@@ -57,13 +56,13 @@
   </ion-buttons>
 
   <ion-buttons end class="threebtnteam" id="threebtnteam">
-    <button headerbackground id="firstbtn">
+    <button headerbackground id="firstbtn" (click)="threebtn(1)">
       <ion-icon name="ios-text" isActive="false"></ion-icon>
     </button>
-    <button headerbackground id="secondbtn">
+    <button headerbackground id="secondbtn" (click)="threebtn(2)">
       <ion-icon name="logo-whatsapp" isActive="false"></ion-icon>
     </button>
-     <button  headerbackground id="thirdbtn" >
+     <button  headerbackground id="thirdbtn" (click)="threebtn(3)">
       <ion-icon name="ios-pin" ></ion-icon>
     </button>
   </ion-buttons>

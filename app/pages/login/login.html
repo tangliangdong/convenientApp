@@ -10,15 +10,15 @@
   </ion-item>
   <ion-item>
     <ion-label>
-      <img src="img/txt_lock_icon.jpg" width="40px" alt="">
+      <img src="img/text_log_icon.png" width="40px" alt="">
     </ion-label>
     <ion-input type="password" [(ngModel)]="user.password" id="userPassword"></ion-input>
   </ion-item>
 
   <button loginbtn block (click) = 'doLogin()' >登录</button>
-  <ion-buttons right-item>
+  <ion-buttons>
     <button loginbtn (click) = 'doRegister()' >注册</button>
-    <button outline (click) = 'doRegister()' >忘记密码，点击找回密码</button>
+    <button outline (click) = 'doRegister()' >忘记密码，点击找回密码！</button>
   </ion-buttons>
 
 

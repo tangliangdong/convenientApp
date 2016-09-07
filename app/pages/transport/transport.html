@@ -1,0 +1,53 @@
+<ion-header class="transport-header" >
+  <ion-toolbar headerbackground>
+    <ion-buttons start>
+      <button royal (click)="backToHome()">
+        <ion-icon name="ios-arrow-back" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>行李运送</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="transport-content" padding>
+  <ion-item class="first-item">
+    <span>选择到达日期：</span>
+    <input type="text" (click)="datePick()" [(ngModel)]="user.date" item-right>
+  </ion-item>
+
+  <ion-item class="second-item">
+    <ion-label>出发地</ion-label>
+    <ion-select [(ngModel)]="user.firstLocal" placeholder="地区">
+      <ion-option value="nes" selected="true">NES</ion-option>
+      <ion-option value="n64">Nintendo64</ion-option>
+      <ion-option value="ps">PlayStation</ion-option>
+      <ion-option value="genesis">Sega Genesis</ion-option>
+      <ion-option value="saturn">Sega Saturn</ion-option>
+      <ion-option value="snes">SNES</ion-option>
+    </ion-select>
+
+
+  </ion-item>
+
+  <ion-item class="third-item">
+    <ion-label>目的地</ion-label>
+    <ion-select [(ngModel)]="user.lastLocal" placeholder="地区">
+      <ion-option value="nes">NES</ion-option>
+      <ion-option value="n64">Nintendo64</ion-option>
+      <ion-option value="ps">PlayStation</ion-option>
+      <ion-option value="genesis">Sega Genesis</ion-option>
+      <ion-option value="saturn">Sega Saturn</ion-option>
+      <ion-option value="snes">SNES</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item class="forth-item">
+    <input type="text" placeholder="请输入关键词：品牌/酒店/具体地址" [(ngModel)]="user.keyword" >
+  </ion-item>
+  <ion-item class="firth-item">
+    <input type="text" placeholder="行李件数" [(ngModel)]="user.baggageAmount" >
+  </ion-item>
+
+  <button block round headerbackground (click)="uploading()">确定</button>
+
+</ion-content>

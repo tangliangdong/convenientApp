@@ -2,6 +2,11 @@ import {Component,ViewChild} from '@angular/core';
 import {NavController,Slides,Platform,ModalController} from 'ionic-angular';
 
 import {LoginPage} from '../login/login';
+import {TransportPage} from '../transport/transport';
+import {DepositPage} from '../transport/deposit';
+
+import {LocationPage} from '../threebtn/location';
+import {complainPage} from '../threebtn/complain';
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
@@ -16,7 +21,8 @@ export class HomePage {
   public thirdbtn : any;
   public user = {
     phoneNumber : '登录/',
-    register: '注册'
+    register: '注册',
+    doWhat: '1'
   };
 
   constructor(private navCtrl: NavController,
@@ -82,5 +88,37 @@ export class HomePage {
       this.user.register = '';
     });
     loginModal.present();
+  }
+  getItems(event){
+    console.log(event);
+    console.log(event.value);
+  }
+  check(number){
+    switch (number) {
+      case 1:
+        let depositModal = this.modalCtrl.create(DepositPage);
+        depositModal.present();
+        break;
+      case 2:
+        console.log(2);
+        let transportModal = this.modalCtrl.create(TransportPage);
+        transportModal.present();
+      break;
+    }
+  }
+  threebtn(number){
+    switch (number) {
+      case 1:
+        let complainModel = this.modalCtrl.create(complainPage);
+        complainModel.present();
+        break;
+      case 2:
+
+        break;
+      case 3:
+        let locationModel = this.modalCtrl.create(LocationPage);
+        locationModel.present();
+        break;
+    }
   }
 }
