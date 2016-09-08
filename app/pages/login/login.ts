@@ -1,5 +1,10 @@
 import {Component,ViewChild} from '@angular/core';
-import {NavController,Slides,Platform,ViewController,LoadingController,ToastController} from 'ionic-angular';
+import {NavController,ModalController,Platform,ViewController,LoadingController,ToastController} from 'ionic-angular';
+
+import {ResetPasswordPage} from '../login/resetPassword';
+import {RegisterPage} from '../login/register';
+
+
 @Component({
   templateUrl: 'build/pages/login/login.html'
 })
@@ -14,6 +19,7 @@ export class LoginPage {
 
   constructor(private navCtrl: NavController,
               platform: Platform,
+              private modalCtrl: ModalController,
               public viewCtrl: ViewController,
               private loadingCtrl: LoadingController,
               private toastCtrl: ToastController) {
@@ -22,15 +28,16 @@ export class LoginPage {
     });
 
   }
+  //定位图标跳动进入效果
   onPageWillEnter(){
     this.userPassword = document.getElementById('userPassword').getElementsByTagName('input');
     this.loginImg = document.getElementById('loginImg');
     this.loginImg.className += ' animated bounceIn';
     //this.loginImg.setAttribute('class','animated bounceIn login-img');
   }
-
+  //登录账号
   doLogin(){
-    if(this.user.phoneNumber == '1' && this.user.password =='1' ){
+    if(this.user.phoneNumber == '110' && this.user.password =='110' ){
       let loadingLogin = this.loadingCtrl.create({
         content: '正在登陆',
         spinner: 'ios',
@@ -59,7 +66,15 @@ export class LoginPage {
       });
       toastError.present();
     }
-
-
+  }
+  //跳转注册页面
+  doRegister(){
+    let register = this.modalCtrl.create(RegisterPage);
+    register.present();
+  }
+  //忘记密码，跳转到找回密码页面
+  findPassword(){
+    let findPasswordModal = this.modalCtrl.create(ResetPasswordPage);
+    findPasswordModal.present();
   }
 }

@@ -10,9 +10,12 @@
 .deposit-content .item .item-inner{
   border: none;
 }
-.deposit-content .first-item span{
-  font-size: 2rem;
+.deposit-content span{
+  font-size: 1.6rem;
 }
 .deposit-content button{
   margin-top: 2rem;
+}
+.deposit-content input{
+  width: 60%;
 }

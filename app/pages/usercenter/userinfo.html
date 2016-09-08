@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar headerbackground>
+    <ion-buttons start>
+      <button royal (click)="backToHome()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>用户中心</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <p>用户手机号：{{user.phoneNumber}} </p>
+  <button block (click)="cancel()">注销</button>
+</ion-content>

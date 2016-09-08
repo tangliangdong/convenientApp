@@ -11,8 +11,22 @@
 
 <ion-content class="deposit-content" class="deposit-content" padding>
   <ion-item class="first-item">
-    <span>选择到达日期：</span>
-    <input type="date" item-right>
+    <span>开始时间：</span>
+    <input type="date" item-right [(ngModel)]="user.depositStartTime" >
   </ion-item>
-  <button block round headerbackground>确定</button>
+  <ion-item>
+    <span>结束时间：</span>
+    <input type="date" item-right [(ngModel)]="user.depositFinishTime">
+  </ion-item>
+  <ion-item>
+    <span>行李件数：</span>
+    <input type="number" item-right [(ngModel)]="user.depositBaggageAmount">
+  </ion-item>
+  <ion-item>
+    <span>上传行李图片</span>
+    <input type="file">
+    <span>未选择任何文件</span>
+  </ion-item>
+
+  <button block round outline appbtn (click)="getBaggageNumber()" >获取行李编号</button>
 </ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar headerbackground>
+    <ion-buttons start>
+      <button royal (click)="backToHome()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>我的订单</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="indent-content">
+  <ion-list>
+    <ion-item class="indent-item">
+      <div>
+        <p>xx大酒店运往xx火车站</p>
+        <p>2件行李</p>
+      </div>
+      <div item-right>
+        <p>2016/2/3</p>
+        <p>20:15</p>
+      </div>
+      <button item-right clear (click)="openDetails()">
+        <ion-icon name='ios-arrow-dropright-outline' class="baggage-details"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item class="indent-item">
+      <div>
+        <p>xx大酒店运往xx火车站</p>
+        <p>3件行李</p>
+      </div>
+      <div item-right>
+        <p>2016/4/1</p>
+        <p>10:25</p>
+      </div>
+      <button item-right clear (click)="openDetails()">
+        <ion-icon name='ios-arrow-dropright-outline' class="baggage-details"></ion-icon>
+      </button>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

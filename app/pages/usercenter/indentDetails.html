@@ -1,0 +1,17 @@
+<ion-header class="location-header">
+  <ion-toolbar headerbackground>
+    <ion-buttons start>
+      <button royal (click)="backToHome()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>订单详情</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding class="indentDetails-content">
+  <h2>取件二维码</h2>
+  <img src="img/generate.gif" alt="">
+  <p>取件单号:85491236024</p>
+
+  <button headerbackground class="indentDetails-comfirm-btn" (click)="comfirmTake()">确定收件</button>
+</ion-content>

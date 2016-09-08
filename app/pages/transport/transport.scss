@@ -14,11 +14,12 @@
   border: none;
 }
 .transport-content .first-item{
-  margin-top: 40px;
+  margin-top: 15px;
 }
-.transport-content .first-item input{
+.transport-content .first-item input,
+.transport-content .second-item input{
   border-radius: 5px;
-  width: 50%;
+  width: 60%;
 }
 .transport-content .forth-item input,
 .transport-content .firth-item input{
@@ -27,5 +28,15 @@
   font-size: 1.8rem;
 }
 .transport-content .item{
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+.transport-content textarea{
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1.6rem
+}
+.transport-content p{
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: .7rem;
 }

@@ -9,11 +9,12 @@ export class TransportPage {
   public user = {
     phoneNumber : '',
     register: '',
-    date: '',
-    firstLocal: '',
-    lastLocal: '',
-    keyword: '',
-    baggageAmount: ''
+    transportFirstLocal: '',
+    transporLastLocal: '',
+    transportStartTime: '',
+    transportFinishTime: '',
+    transportBaggageAmount: '',
+    transportBaggageSite: '',
   };
 
   constructor(private navCtrl: NavController,
@@ -42,10 +43,12 @@ export class TransportPage {
     this.viewCtrl.dismiss();
   }
   uploading(){
-    if(this.user.date == '' ||
-       this.user.firstLocal == '' ||
-       this.user.lastLocal == '' ||
-       this.user.baggageAmount == ''){
+    if(this.user.transportStartTime == '' ||
+       this.user.transportFinishTime == '' ||
+       this.user.transportFirstLocal == '' ||
+       this.user.transporLastLocal == '' ||
+       this.user.transportBaggageAmount == '' ||
+       this.user.transportBaggageSite == ''){
       let toast = this.toastCtrl.create({
         message: '信息请填写完整',
         duration: 2000,

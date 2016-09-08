@@ -15,11 +15,9 @@
     <ion-input type="password" [(ngModel)]="user.password" id="userPassword"></ion-input>
   </ion-item>
 
-  <button loginbtn block (click) = 'doLogin()' >登录</button>
+  <button loginbtn block (click)='doLogin()'>登录</button>
   <ion-buttons>
-    <button loginbtn (click) = 'doRegister()' >注册</button>
-    <button outline (click) = 'doRegister()' >忘记密码，点击找回密码！</button>
+    <button loginbtn (click)='doRegister()'>注册</button>
+    <button outline (click)='findPassword()'>忘记密码，点击找回密码！</button>
   </ion-buttons>
-
-
 </ion-content>

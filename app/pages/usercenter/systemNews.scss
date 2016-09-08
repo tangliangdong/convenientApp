@@ -1,0 +1,36 @@
+.system-content ion-list > .item:last-child, ion-list > .item-wrapper:last-child .item {
+    border: none;
+    position: relative;
+}
+.system-content .system-item .information{
+  font-size: 1.4rem;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 4px 6px;
+  position: relative;
+  z-index: 40;
+  margin-left: 15px;
+  overflow: visible;
+
+}
+.system-content .system-item ion-avatar[item-left]{
+  margin: 8px 4px 8px 0;
+}
+.system-content .system-item .information:before{
+  content: '';
+  width: .8rem;
+  height: .8rem;
+  display:block;
+  border: 1px solid transparent;
+  border-top-color: black;
+  border-left-color: black;
+  position: absolute;
+  left: -.5rem;
+  top: .6rem;
+  transform: rotate(-45deg);
+  background: white;
+  z-index: 50;
+}
+.system-content .system-item ion-label{
+  white-space: normal;
+}

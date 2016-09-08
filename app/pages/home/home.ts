@@ -7,6 +7,11 @@ import {DepositPage} from '../transport/deposit';
 
 import {LocationPage} from '../threebtn/location';
 import {complainPage} from '../threebtn/complain';
+import {ServicePage} from '../threebtn/service';
+
+import {RegisterPage} from '../login/register';
+
+import {UserinfoPage} from '../usercenter/userinfo';
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
@@ -19,8 +24,9 @@ export class HomePage {
   public firstbtn : any;
   public secondbtn : any;
   public thirdbtn : any;
+  public local : any;
   public user = {
-    phoneNumber : '登录/',
+    phoneNumber : '用户中心',
     register: '注册',
     doWhat: '1'
   };
@@ -28,6 +34,12 @@ export class HomePage {
   constructor(private navCtrl: NavController,
               platform: Platform,
               public modalCtrl: ModalController) {
+    if(localStorage.getItem('phoneNumber')==null) {
+      let loginNav = this.navCtrl.push(LoginPage);
+    }else{
+      // this.user.phoneNumber = localStorage.getItem('phoneNumber');
+      // this.user.register = '';
+    }
     platform.ready().then((readySource) => {
       // Platform now ready, execute any required native code
       //this.slider.slideNext(300);
@@ -113,12 +125,22 @@ export class HomePage {
         complainModel.present();
         break;
       case 2:
-
+        let serviceModel = this.modalCtrl.create(ServicePage);
+        serviceModel.present();
         break;
       case 3:
         let locationModel = this.modalCtrl.create(LocationPage);
         locationModel.present();
         break;
     }
+  }
+  //跳转注册页面
+  doRegister(){
+    let register = this.modalCtrl.create(RegisterPage);
+    register.present();
+  }
+  cancel(){
+    let userinfoModal = this.modalCtrl.create(UserinfoPage);
+    userinfoModal.present();
   }
 }

@@ -10,14 +10,10 @@
 </ion-header>
 
 <ion-content class="transport-content" padding>
-  <ion-item class="first-item">
-    <span>选择到达日期：</span>
-    <input type="text" (click)="datePick()" [(ngModel)]="user.date" item-right>
-  </ion-item>
 
-  <ion-item class="second-item">
+  <!-- <ion-item class="first-item">
     <ion-label>出发地</ion-label>
-    <ion-select [(ngModel)]="user.firstLocal" placeholder="地区">
+    <ion-select [(ngModel)]="user.transportFirstLocal" placeholder="地区">
       <ion-option value="nes" selected="true">NES</ion-option>
       <ion-option value="n64">Nintendo64</ion-option>
       <ion-option value="ps">PlayStation</ion-option>
@@ -25,13 +21,11 @@
       <ion-option value="saturn">Sega Saturn</ion-option>
       <ion-option value="snes">SNES</ion-option>
     </ion-select>
-
-
   </ion-item>
 
-  <ion-item class="third-item">
+  <ion-item class="second-item">
     <ion-label>目的地</ion-label>
-    <ion-select [(ngModel)]="user.lastLocal" placeholder="地区">
+    <ion-select [(ngModel)]="user.transportLastLocal" placeholder="地区">
       <ion-option value="nes">NES</ion-option>
       <ion-option value="n64">Nintendo64</ion-option>
       <ion-option value="ps">PlayStation</ion-option>
@@ -39,14 +33,41 @@
       <ion-option value="saturn">Sega Saturn</ion-option>
       <ion-option value="snes">SNES</ion-option>
     </ion-select>
+  </ion-item> -->
+
+  <ion-item class="first-item">
+    <span>出发地：</span>
+    <input type="text" [(ngModel)]="user.transportFirstLocal" item-right>
+  </ion-item>
+  <ion-item class="second-item">
+    <span>目的地：</span>
+    <input type="text" [(ngModel)]="user.transportLastLocal" item-right>
   </ion-item>
 
-  <ion-item class="forth-item">
-    <input type="text" placeholder="请输入关键词：品牌/酒店/具体地址" [(ngModel)]="user.keyword" >
+  <ion-item>
+    <span>开始时间：</span>
+    <input type="date" item-right [(ngModel)]="user.transportStartTime">
+  </ion-item>
+  <ion-item>
+    <span>结束时间：</span>
+    <input type="date" item-right [(ngModel)]="user.transportFinishTime">
+  </ion-item>
+  <ion-item>
+    <ion-label>是否购买保险</ion-label>
+    <ion-checkbox dark checked="true" [(ngModel)]="user.buyInsurance" ></ion-checkbox>
   </ion-item>
   <ion-item class="firth-item">
-    <input type="text" placeholder="行李件数" [(ngModel)]="user.baggageAmount" >
+    <input type="text" placeholder="行李件数" [(ngModel)]="user.transportBaggageAmount" >
   </ion-item>
+
+  <ion-item>
+    <span>上传行李图片</span>
+    <input type="file">
+    <span>未选择任何文件</span>
+  </ion-item>
+
+  <p>行李交接地点</p>
+  <textarea name="" id="" cols="30" rows="2" style="resize: none" [(ngModel)]="user.transportBaggageSite"></textarea>
 
   <button block round headerbackground (click)="uploading()">确定</button>
 
